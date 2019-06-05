@@ -1,3 +1,5 @@
+language: c
+
 matrix:
   include:
     - os: osx
@@ -20,6 +22,11 @@ matrix:
       env:
         - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
 
+script: make && make test && php test detail valgrind
 
 before_install:
-    - eval "${MATRIX_EVAL}"
+- sudo apt-get update
+- sudo apt-get install php5
+- sudo apt-get install bash
+- sudo apt-get install valgrind
+- eval "${MATRIX_EVAL}"
