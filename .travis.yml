@@ -20,4 +20,8 @@ matrix:
 script: make && make test && php test detail valgrind
 
 before_install:
+
+
+- brew update
+
 - eval "${MATRIX_EVAL}"
