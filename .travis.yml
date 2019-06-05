@@ -1,5 +1,10 @@
 language: c
 
+ddons:
+  homebrew:
+      packages:
+          - beanstalk
+              update: true
 matrix:
   include:
     - os: osx
