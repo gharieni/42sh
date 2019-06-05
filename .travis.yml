@@ -1,10 +1,5 @@
 language: c
 
-ddons:
-  homebrew:
-      packages:
-          - beanstalk
-              update: true
 matrix:
   include:
     - os: osx
@@ -26,6 +21,12 @@ matrix:
       osx_image: xcode8
       env:
         - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
+
+ddons:
+  homebrew:
+      packages:
+          - beanstalk
+              update: true
 
 script: make && make test && php test detail valgrind
 
