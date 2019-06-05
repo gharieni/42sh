@@ -22,12 +22,6 @@ matrix:
       env:
         - MATRIX_EVAL="brew install gcc && CC=gcc-7 && CXX=g++-7"
 
-ddons:
-  homebrew:
-      packages:
-          - beanstalk
-              update: true
-
 script: make && make test && php test detail valgrind
 
 before_install:
